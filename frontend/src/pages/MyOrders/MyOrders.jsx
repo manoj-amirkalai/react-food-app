@@ -4,6 +4,8 @@ import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios'
 import { assets } from '../../assets/assets'
 
+import { toast } from "react-toastify";
+
 const MyOrders = () => {
     const {url,token}=useContext(StoreContext)
     const [data,setData]=useState([])
@@ -14,9 +16,9 @@ const MyOrders = () => {
     const deleteOrder=async(order)=>{
         const response=await axios.post(url+"/api/order/delete",{orderId:order._id})
        if(response.data.success){
-        alert("order removed")
+        toast.info("order removed")
        }else(
-        alert("order not removed")
+        toast.error("order not removed")
        )
       
       await fetchOrders()

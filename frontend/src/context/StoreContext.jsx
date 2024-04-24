@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const url = "https://manoj-food-app-backend.onrender.com";
@@ -31,6 +32,7 @@ const StoreContextProvider = (props) => {
         { headers: { token } }
       );
     }
+    toast.info("item removed")
   };
   const getTotalCartAmount = () => {
     let totalAmount = 0;
