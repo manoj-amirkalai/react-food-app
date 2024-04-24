@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: -15px;
+  background-color: rgb(251, 251, 251);
+
+  
+}
+.admin{
+  text-align: center;
+  color: rgb(241, 99, 49);
+}
+.navbar .logo{
+    width: max(10%,80px);
+
+}.navbar .profile{
+    width: 80px;
+    border-radius: 50%;
+    
+}@media(max-width:1000px){
+  .navbar .profile{
+    width: 50px;
+    margin-top: 5px;
+  }
+}
