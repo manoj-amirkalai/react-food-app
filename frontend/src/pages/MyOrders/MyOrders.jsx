@@ -29,6 +29,9 @@ const MyOrders = () => {
     <div className='my-orders'>
         <h2>My Orders</h2>
         <div className="container">
+          {!data.length?  <div className="verify">
+      <div className="spinner"></div>
+    </div>:  <>
             {data.map((order,index)=>{
                 return(
                     <div  key={index} className="my-orders-order">
@@ -58,7 +61,7 @@ const MyOrders = () => {
                     </div>
                 )
 
-            })}
+            })}</>}
         </div>
       
     </div>

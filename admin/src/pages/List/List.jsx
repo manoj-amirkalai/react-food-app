@@ -37,6 +37,9 @@ const List = ({url}) => {
           <b>Price</b>
           <b>Action</b>
         </div>
+        {!list.length?  <div className="verify">
+      <div className="spinner"></div>
+    </div>:<>
         {list.map((item, index) => {
           return (
             <div key={index} className="list-table-format">
@@ -49,7 +52,7 @@ const List = ({url}) => {
               </p>
             </div>
           );
-        })}
+        })}</>}
       </div>
     </div>
   );

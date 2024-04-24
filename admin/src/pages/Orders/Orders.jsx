@@ -32,6 +32,9 @@ const Orders = ({ url }) => {
     <div className="order add">
       <h3>Order Page</h3>
       <div className="order-list">
+          {!orders.length?  <div className="verify">
+      <div className="spinner"></div>
+    </div>:<>
         {orders.map((order, index) => (
           <div key={index} className="order-item">
             <img src={assets.parcel_icon} alt="" />
@@ -77,7 +80,7 @@ const Orders = ({ url }) => {
             <p>Time:{order.time} GMT</p>
             </div>
           </div>
-        ))}
+        ))}</>}
       </div>
     </div>
   );

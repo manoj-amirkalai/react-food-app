@@ -1,14 +1,44 @@
-.food-display{
+.food-display {
   margin-top: 30px;
 }
-.food-display h2{
+.food-display h2 {
   font-size: max (2vw, 24px);
   font-weight: 600;
 }
-.food-display-list{
+.food-display-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   margin-top: 30px;
   gap: 30px;
+  position: relative;
   row-gap: 50px;
+}
+
+
+.verify {
+  min-height: 20vh;
+  display: grid;
+}
+.verify .spinner {
+  position: absolute;
+  left: 40%;
+  top: 10%;
+  bottom: 50%;
+  width: 60px;
+  height: 60px;
+  border: 5px solid #bdbdbd;
+  border-top-color: tomato;
+  border-radius: 50%;
+  animation: rotate 1s infinite;
+}
+@media (max-width: 1500px) {
+  .verify .spinner {
+    width: 40px;
+    height: 40px;
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
