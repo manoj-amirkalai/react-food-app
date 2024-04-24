@@ -49,7 +49,7 @@ const MyOrders = () => {
                         <p>Items:{order.items.length}</p>
                         <p><span>&#x25cf;</span><b>{order.status}</b></p>
                         
-            <p>{order.time}</p>
+            <p>{order.time} GMT</p>
             <p>{order.date.slice(0,10)}</p>
                         <button onClick={fetchOrders}>Track order</button>
 

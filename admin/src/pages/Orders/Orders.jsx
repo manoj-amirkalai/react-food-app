@@ -74,7 +74,7 @@ const Orders = ({ url }) => {
               <option value="Delivered">Delivered</option>
             </select>
             <p>Date:{order.date.slice(0,10)}</p>
-            <p>Time:{order.time}</p>
+            <p>Time:{order.time} GMT</p>
             </div>
           </div>
         ))}
