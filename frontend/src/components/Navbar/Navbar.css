@@ -36,7 +36,7 @@
 }
 .navbar .active {
   padding-bottom: 2px;
-  border-bottom: 2px solid #49557e;
+  border-bottom: 2px solid rgb(230, 97, 16);
 }
 .navbar li {
   cursor: pointer;
