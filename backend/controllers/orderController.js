@@ -10,6 +10,7 @@ const placeOrder = async (req, res) => {
       items: req.body.items,
       amount: req.body.amount,
       address: req.body.address,
+      payment: false,
       time: new Date().toString().slice(15, 25),
     });
     await newOrder.save();
@@ -54,7 +55,7 @@ const verifyOrder = async (req, res) => {
       await orderModel.findByIdAndUpdate(orderId, { payment: true });
       res.json({ success: true, message: "Paid" });
     } else {
-      await orderModel.findByIdAndDelete(orderId);
+      // await orderModel.findByIdAndDelete(orderId);
       res.json({ success: false, message: "Not Paid" });
     }
   } catch (error) {

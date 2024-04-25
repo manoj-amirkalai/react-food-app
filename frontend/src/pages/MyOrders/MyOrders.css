@@ -40,6 +40,10 @@
 
 .my-orders-order img {
   width: 50px;
+}.place{
+  text-align: center;
+  font-weight: 900;
+  margin-top: 5%;
 }
 
 .my-orders-order p span {
@@ -66,7 +70,9 @@
     grid-row: 5px;
     font-size: 12px;
   }
-
+  .place{
+    font-size: 100%;
+  }
   .my-orders-order button {
     font-size: 10px;
   }
