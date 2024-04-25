@@ -5,7 +5,8 @@ import "./Login.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ url }) => {
+const Login = ({ url,setShowLogin }) => {
+    
     const navigate=useNavigate()
   const [data, setData] = useState({
     email: "",
@@ -18,7 +19,7 @@ const Login = ({ url }) => {
   };
   const logggedIn = () => {
     if(data.email === "manojfoodapp@gmail.com" || data.password === ""){
-        sessionStorage.setItem("code", true)
+       setShowLogin(true)
         navigate('/orders')
     toast.success("Welcome Back BOSS")
 

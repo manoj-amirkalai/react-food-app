@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar/Sidebar"
 import {Route, Routes} from 'react-router-dom'
 import Add from "./pages/Add/Add"
 import List from "./pages/List/List"
+import { useState } from "react";
 import Orders from "./pages/Orders/Orders"
 import Users from "./pages/Users/Users"
 
@@ -12,14 +13,15 @@ import Login from "./components/Login/Login"
 
 
 const App = () => {
-  const code=sessionStorage.getItem("code")||false;
+  
+  const [showLogin, setShowLogin] = useState(false);
 
 
   
   const url = "https://manoj-food-app-backend.onrender.com";
   
   return (
-    <div>{!code?<Login url={url} />:<>
+    <div>{!showLogin?<Login url={url} setShowLogin={setShowLogin} />:<>
       <ToastContainer />
       <Navbar/>
       <hr />
