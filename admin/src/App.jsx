@@ -8,14 +8,18 @@ import Users from "./pages/Users/Users"
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Login from "./components/Login/Login"
 
 
 const App = () => {
+  const code=sessionStorage.getItem("code")||false;
+
+
   
   const url = "https://manoj-food-app-backend.onrender.com";
   
   return (
-    <div>
+    <div>{!code?<Login url={url} />:<>
       <ToastContainer />
       <Navbar/>
       <hr />
@@ -25,9 +29,9 @@ const App = () => {
           <Route  path="/add" element={<Add url={url}/>} />
           <Route  path="/list" element={<List url={url}/>} />
           <Route  path="/users" element={<Users url={url}/>} />
-          <Route  path="/" element={<Orders url={url}/>} />
+          <Route  path="/orders" element={<Orders url={url}/>} />
         </Routes>
-      </div>
+      </div></>}
     </div>
   )
 }

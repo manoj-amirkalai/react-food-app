@@ -36,9 +36,6 @@ const LoginPopup = ({ setShowLogin }) => {
       toast.error(response.data.message);
     }
   };
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
   return (
     <div className="login-popup">
       <form onSubmit={onLogin} className="login-popup-container">
