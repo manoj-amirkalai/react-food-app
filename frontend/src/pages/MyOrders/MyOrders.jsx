@@ -38,9 +38,8 @@ const MyOrders = () => {
     } else {
       toast.error("Error");
     }
-    
   };
-  const retrypayment=async(order)=>{
+  const retrypayment = async (order) => {
     let orderData = {
       address: order.address,
       items: order.items,
@@ -55,17 +54,12 @@ const MyOrders = () => {
     } else {
       toast.error("Error");
     }
-        const responses = await axios.post(url + "/api/order/delete", {
-          orderId: order._id,
-        });
-        if (responses.data.success) {
-          toast.info("order removed");
-        } else toast.error("order not removed");
-    
-        await fetchOrders();
-      
-    
-  }
+    await axios.post(url + "/api/order/delete", {
+      orderId: order._id,
+    });
+
+    await fetchOrders();
+  };
   useEffect(() => {
     if (token) {
       fetchOrders();
@@ -120,7 +114,8 @@ const MyOrders = () => {
                         >
                           &#x2716;
                         </span>{" "}
-                        <span style={{cursor:"pointer"}}
+                        <span
+                          style={{ cursor: "pointer" }}
                           onClick={() => retrypayment(order)}
                         >
                           &#128260;
