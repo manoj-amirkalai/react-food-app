@@ -1,22 +1,31 @@
-.container{
-    margin: 30px;
-}h3{
+.container {
+  margin: 30px;
+}
+h3 {
   color: tomato;
 }
 
 table {
-    border-collapse: collapse;
-    width: 200%;cursor: pointer;
-    margin-top: 20px;
+  border-collapse: collapse;
+  width: 80vw;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #b7afaf;
+}
+.email {
+}
+
+tr:hover {
+  background-color: tomato;
+}
+@media (max-width: 600px) {
+  td{
+    font-size: 60%;
   }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #b7afaf;
-  }.email{
-    
-    margin-left: 50px;
-  }
-  
-  tr:hover {background-color: tomato;}
+}
