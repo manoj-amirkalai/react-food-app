@@ -48,15 +48,16 @@ const MyOrders = () => {
     let response = await axios.post(url + "/api/order/place", orderData, {
       headers: { token },
     });
+    await axios.post(url + "/api/order/delete", {
+      orderId: order._id,
+    });
     if (response.data.success) {
       const { session_url } = response.data;
       window.location.replace(session_url);
     } else {
       toast.error("Error");
     }
-    await axios.post(url + "/api/order/delete", {
-      orderId: order._id,
-    });
+    
 
     await fetchOrders();
   };
@@ -115,7 +116,8 @@ const MyOrders = () => {
                           &#x2716;
                         </span>{" "}
                         <span
-                          style={{ cursor: "pointer" }}
+                        
+                        className="retry"
                           onClick={() => retrypayment(order)}
                         >
                           &#128260;

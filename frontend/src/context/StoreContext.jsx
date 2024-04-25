@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const url = "https://manoj-food-app-backend.onrender.com";
+  
   const [token, setToken] = useState("");
   const [cartItems, setCartItems] = useState({});
   const [food_list, setFood_list] = useState([]);

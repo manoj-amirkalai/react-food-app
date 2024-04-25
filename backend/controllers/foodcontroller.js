@@ -1,4 +1,5 @@
 import foodModel from "../models/foodModel.js";
+import userModel from "../models/userModel.js";
 import fs from "fs";
 
 //add food item
@@ -44,5 +45,13 @@ const removeFood = async (req, res) => {
     res.json({ success: false, data: "food not removed" });
   }
 };
+const getAllUsers = async (req, res) => {
+  try {
+    const data = await userModel.find({});
+    res.json({ success: true, data });
+  } catch (error) {
+    res.json({ success: false, data: "Users not found" });
+  }
+};
 
-export { addFood, listFood, removeFood };
+export { addFood, listFood, removeFood, getAllUsers };

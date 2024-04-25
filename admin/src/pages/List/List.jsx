@@ -26,6 +26,7 @@ const List = ({url}) => {
       toast.error("Failed to removing food from the list");
     }
   };
+  
   return (
     <div className="list add flex-col">
       <p>All Foods List</p>

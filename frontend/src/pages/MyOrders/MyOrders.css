@@ -62,6 +62,9 @@
   background-color: #ffe1e1;
   cursor: pointer;
   color: #454545;
+}.retry{
+  cursor: pointer;
+  
 }
 
 @media(max-width:900px) {
