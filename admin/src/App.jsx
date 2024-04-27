@@ -21,9 +21,10 @@ const App = () => {
   const url = "https://manoj-food-app-backend.onrender.com";
   // const url = "http://localhost:5000"
   
-  return (
+  return (<>
+   <ToastContainer />
     <div>{!showLogin?<Login url={url} setShowLogin={setShowLogin} />:<>
-      <ToastContainer />
+     
       <Navbar/>
       <hr />
       <div className="app-content">
@@ -35,7 +36,7 @@ const App = () => {
           <Route  path="/orders" element={<Orders url={url}/>} />
         </Routes>
       </div></>}
-    </div>
+    </div></>
   )
 }
 

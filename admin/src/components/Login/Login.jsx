@@ -22,8 +22,7 @@ const Login = ({ url, setShowLogin }) => {
       navigate("/orders");
       toast.success("Welcome Back BOSS");
     } else {
-      alert("Invalid Email or Password")
-      toast.info("Invalid Email or Password");
+      toast.error("Invalid Email or Password");
     }
   };
   return (
