@@ -17,12 +17,13 @@ const Login = ({ url, setShowLogin }) => {
     setData({ ...data, [name]: value });
   };
   const logggedIn = () => {
-    if (data.email === "manojfoodapp@gmail.com" || data.password === "987654321") {
+    if (data.email === "manojfoodapp@gmail.com" && data.password === "987654321") {
       setShowLogin(true);
       navigate("/orders");
       toast.success("Welcome Back BOSS");
     } else {
-      toast.error("Invalid Email or Password");
+      alert("Invalid Email or Password")
+      toast.info("Invalid Email or Password");
     }
   };
   return (
