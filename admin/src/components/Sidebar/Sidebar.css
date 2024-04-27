@@ -24,6 +24,8 @@
 }.sidebar-option.active{
   background-color: #fff0ed;
   border-color:tomato ;
+}.sidebar-option p{
+  color: tomato;
 }
 @media (max-width:850px){
     .sidebar-option p{

@@ -36,4 +36,7 @@
   background-color: black;
   color: white;
   cursor: pointer;
+  background-color: tomato;
+}.add-img-upload p,.add-product-name p,.add-product-description p,.add-category p,.add-price p{
+  color: tomato;
 }

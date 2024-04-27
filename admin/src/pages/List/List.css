@@ -16,6 +16,8 @@
 }.list-table-format p{
   margin-left: 10px;
 
+}.all{
+  color: tomato;
 }
 .cursor{
     cursor: pointer;
