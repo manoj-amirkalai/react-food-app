@@ -24,7 +24,14 @@
   }.login-popup-container p{
     text-align: center;
     color: tomato;
-  }
+  }.login-popup p span {
+  color: tomato;
+  font-weight: 500;
+  cursor: pointer;
+}.userlogin{
+  color: black!important;
+}
+
   
   .login-popup-inputs input {
     outline: none;

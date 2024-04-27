@@ -25,12 +25,18 @@
   background-color: #fff0ed;
   border-color:tomato ;
 }
-@media (max-width:600px){
+@media (max-width:850px){
     .sidebar-option p{
       display: none;
         width: 20%;
     }.sidebar-options{
       width:  100%;
-    }
+    }  
    
+}@media (max-width:600px){
+  .sidebar-option img{
+    width:  20px;
+    margin-left: -5px;
+  }
+ 
 }

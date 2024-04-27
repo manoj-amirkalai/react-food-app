@@ -19,6 +19,7 @@ const App = () => {
 
   
   const url = "https://manoj-food-app-backend.onrender.com";
+  // const url = "http://localhost:5000"
   
   return (
     <div>{!showLogin?<Login url={url} setShowLogin={setShowLogin} />:<>

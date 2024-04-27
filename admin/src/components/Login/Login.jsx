@@ -5,9 +5,8 @@ import "./Login.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ url,setShowLogin }) => {
-    
-    const navigate=useNavigate()
+const Login = ({ url, setShowLogin }) => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -18,20 +17,18 @@ const Login = ({ url,setShowLogin }) => {
     setData({ ...data, [name]: value });
   };
   const logggedIn = () => {
-    if(data.email === "manojfoodapp@gmail.com" || data.password === ""){
-       setShowLogin(true)
-        navigate('/orders')
-    toast.success("Welcome Back BOSS")
-
-}else{
-            toast.error("Invalid Email or Password");
-        }
+    if (data.email === "manojfoodapp@gmail.com" || data.password === "") {
+      setShowLogin(true);
+      navigate("/orders");
+      toast.success("Welcome Back BOSS");
+    } else {
+      toast.error("Invalid Email or Password");
+    }
   };
   return (
     <div className="login-popup">
-        
       <form onSubmit={logggedIn} className="login-popup-container">
-      <p>Admin Login</p>
+        <p>Admin's Login</p>
         <div className="login-popup-inputs">
           <input
             onChange={onChangeHandler}
@@ -50,7 +47,16 @@ const Login = ({ url,setShowLogin }) => {
             required
           />
         </div>
-        <button type="submit">Log in</button>
+        <button type="submit">Log in</button>{" "}
+        <p className="userlogin">
+          For user's login page please
+          <span>
+            {" "}
+            <a href="https://manoj-food-app-frontend.onrender.com">
+              Click here
+            </a>
+          </span>
+        </p>
       </form>
     </div>
   );

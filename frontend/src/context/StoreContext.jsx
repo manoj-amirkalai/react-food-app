@@ -4,7 +4,9 @@ import { toast } from "react-toastify";
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const url = "https://manoj-food-app-backend.onrender.com";
-  
+
+  // const url = "http://localhost:5000";
+
   const [token, setToken] = useState("");
   const [cartItems, setCartItems] = useState({});
   const [food_list, setFood_list] = useState([]);
@@ -33,7 +35,7 @@ const StoreContextProvider = (props) => {
         { headers: { token } }
       );
     }
-    toast.info("item removed")
+    toast.info("item removed");
   };
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -53,7 +55,7 @@ const StoreContextProvider = (props) => {
       {},
       { headers: { token } }
     );
-    setCartItems(response.data.cartData)
+    setCartItems(response.data.cartData);
   };
   const fetchFoodList = async () => {
     const response = await axios.get(url + "/api/food/list");
@@ -64,7 +66,7 @@ const StoreContextProvider = (props) => {
       await fetchFoodList();
       if (localStorage.getItem("token")) {
         setToken(localStorage.getItem("token"));
-        await loadCartData(localStorage.getItem("token"))
+        await loadCartData(localStorage.getItem("token"));
       }
     }
     loadData();

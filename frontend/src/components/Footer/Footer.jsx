@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="footer-content-center">
           <h2>COMPANY</h2>
           <ul>
-            <li>Home</li>
+            <li><a href="https://manoj-food-app-admin.onrender.com/">Home</a></li>
             <li>About Us</li>
             <li>Delivery</li>
             <li>Privacy Policy</li>

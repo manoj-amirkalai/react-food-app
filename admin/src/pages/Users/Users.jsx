@@ -21,17 +21,31 @@ const Users = ({ url }) => {
     <div className="container">
       <h3>User's List</h3>
       <table>
-        <tr>
-          <th>Username</th>
-          <th >Email Address</th>
-        </tr>
-
-        {list.map((user) => (
-          <tr>
-            <td>{user.name}</td>
-            <td>{user.email}</td>
-          </tr>
-        ))}
+        {" "}
+        {!list.length ? (
+          <>
+            <tr>
+              <th>Username</th>
+              <th>Email Address</th>
+            </tr>{" "}
+            <div className="verify">
+              <div className="spinner"></div>
+            </div>
+          </>
+        ) : (
+          <>
+            <tr>
+              <th>Username</th>
+              <th>Email Address</th>
+            </tr>
+            {list.map((user) => (
+              <tr>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+              </tr>
+            ))}
+          </>
+        )}
       </table>
     </div>
   );
