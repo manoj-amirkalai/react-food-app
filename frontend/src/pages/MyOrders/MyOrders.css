@@ -1,5 +1,7 @@
 .my-orders {
   margin: 50px 0px;
+}.my-orders h2{
+  margin-bottom: 10px;
 }
 
 .notpaid {
