@@ -25,6 +25,18 @@ const Orders = ({ url }) => {
       await fetchAllOrders();
     }
   };
+
+
+  const deleteOrder = async (order) => {
+    const response = await axios.post(url + "/api/order/delete", {
+      orderId: order._id,
+    });
+    if (response.data.success) {
+      toast.info("order removed");
+    } else toast.error("order not removed");
+
+    await fetchAllOrders();
+  };
   useEffect(() => {
     fetchAllOrders();
   }, []);
@@ -79,7 +91,7 @@ const Orders = ({ url }) => {
                   {order.payment ? (
                     <span className="paid">&#x2714; </span>
                   ) : (
-                    <span className="notpaid">&#x2716;</span>
+                    <span onClick={() => deleteOrder(order)} className="notpaid">&#x2716;</span>
                   )}
                 </p>
                 <div className="time">

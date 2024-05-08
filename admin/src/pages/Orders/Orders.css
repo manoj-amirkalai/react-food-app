@@ -41,12 +41,14 @@
   border-radius: 30%;
   padding: 0 2px;
   margin-left: 3%;
+  cursor: pointer;
 }.notpaid{
   color: red;
   background-color: rgba(216, 50, 31, 0.358);
   border-radius: 30%;
   padding: 0 2px;
   margin-left: 4%;
+  cursor: pointer;
 }
 @media (max-width: 1000px) {
   .order-item {
