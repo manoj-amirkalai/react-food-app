@@ -34,7 +34,6 @@ const MyOrders = () => {
     if (response.data.success) {
       let order = response.data.data;
       setOrders([...order.reverse()]);
-      console.log(response.data.data);
     } else {
       toast.error("Error");
     }
