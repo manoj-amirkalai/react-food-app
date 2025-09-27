@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import { StoreContext } from "../../context/StoreContext";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart,getTotalCartAmount ,url} = useContext(StoreContext);
+  const { cartItems = {}, food_list, removeFromCart,getTotalCartAmount ,url} = useContext(StoreContext);
   const navigate=useNavigate()
   return (
     <div className="cart">

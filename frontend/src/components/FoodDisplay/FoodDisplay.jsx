@@ -9,10 +9,10 @@ const FoodDisplay = ({ category }) => {
     <div className="food-display" id="food-display">
       <h2>Top dishes near you</h2>
       <div className="food-display-list">
-        {!food_list.length?  <div className="verify">
+      {food_list?.length === 0 ?  <div className="verify">
       <div className="spinner"></div>
     </div>:<>
-        {food_list.map((item, index) => {
+        {food_list?.map((item, index) => {
           if (category === "All" || category === item.category) {
             return (
               <FoodItem
@@ -21,6 +21,7 @@ const FoodDisplay = ({ category }) => {
                 name={item.name}
                 price={item.price}
                 image={item.image}
+                defaultmenu={item.defaultmenu}
                 description={item.description}
               />
             );
