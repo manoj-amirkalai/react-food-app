@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { food_list as food_list_default } from "../assets/assets";
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const url = "https://manoj-food-app-backend.onrender.com";
@@ -9,7 +10,7 @@ const StoreContextProvider = (props) => {
 
   const [token, setToken] = useState("");
   const [cartItems, setCartItems] = useState({});
-  const [food_list, setFood_list] = useState([]);
+  const [food_list, setFood_list] = useState(food_list_default);
 
   const addToCart = async (itemId) => {
     if (!cartItems[itemId]) {
@@ -57,13 +58,10 @@ const StoreContextProvider = (props) => {
     );
     setCartItems(response.data.cartData);
   };
-  const fetchFoodList = async () => {
-    const response = await axios.get(url + "/api/food/list");
-    setFood_list(response.data.data);
-  };
+
   useEffect(() => {
     async function loadData() {
-      await fetchFoodList();
+      // await fetchFoodList();
       if (localStorage.getItem("token")) {
         setToken(localStorage.getItem("token"));
         await loadCartData(localStorage.getItem("token"));
